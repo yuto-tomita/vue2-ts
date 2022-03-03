@@ -1,28 +1,19 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <ClassApi />
+    <CompositionApi :test="123" />
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import ClassApi from './components/ClassApi.vue'
+import CompositionApi from './components/CompositionApi.vue'
 
-export default {
-  name: 'App',
+export default defineComponent({
   components: {
-    HelloWorld
+    ClassApi,
+    CompositionApi
   }
-}
+})
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
